@@ -9,25 +9,85 @@
 </head>
 <body>
     <header>
-        <div class="navbar">
+        <div class="bar">
             <div class="logo">LOGO</div>
             <div class="search-bar">
                 <input type="text" placeholder="통합 검색">
                 <button><img src="src/search-icon.png" alt="검색"></button>
-            </div>
-            <div class="mypage">
-                <a href="#">마이페이지</a>
-            </div>
+           </div>
+           <div class="mypage-notification-wrapper"> <!-- Wrapper added -->
+                <div class="notification">
+                    <button><img src="src/notification.png" alt="알림"></button>
+                </div>
+                <div class="mypage">
+                    <a href="#">마이페이지</a>
+                </div>
+           </div>
         </div>
-        <div class="menu">
+        <nav class="menu">
             <a href="#">통합 검색</a>
             <a href="#">CVE/취약점</a>
             <a href="#">보안 뉴스</a>
             <a href="#">기술 문서</a>
             <a href="#">저장함</a>
             <a href="#">커뮤니티</a>
-            <a href="#">알림</a>
-        </div>
+        </nav>
     </header>
+    <main>
+        <section class="main-content">
+            <div class="left-section">
+                <h2>최신 CVE & 주요 이슈</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="title">CVE-2025-1234</span>
+                            <button class="detail-btn">상세</button>
+                        </div>
+                        <p class="description">Apache 서버에서 XX 취약점 발견</p>
+                        <div class="tags">
+                            <span class="severity critical">● Critical</span>
+                            <span class="tag">#RCE</span>
+                            <span class="tag">#Apache</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="title">CVE-2025-5678</span>
+                            <button class="detail-btn">상세</button>
+                        </div>
+                        <p class="description">Nginx 서버에서 XXE 취약점 발견</p>
+                        <div class="tags">
+                            <span class="severity high">● High</span>
+                            <span class="tag">#XXE</span>
+                            <span class="tag">#Nginx</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="title">CVE-2025-9101</span>
+                            <button class="detail-btn">상세</button>
+                        </div>
+                        <p class="description">MySQL 데이터베이스에서 SQL Injection 취약점 발견</p>
+                        <div class="tags">
+                            <span class="severity medium">● Medium</span>
+                            <span class="tag">#SQLi</span>
+                            <span class="tag">#MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-section">
+                <h2>사이드바</h2>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <div style="height: 1000px; background-color: #f0f0f0;">
+            <p style="text-align: center; padding-top: 20px;">스크롤 테스트용 더미 영역</p>
+        </div>
+    </footer>
 </body>
 </html>

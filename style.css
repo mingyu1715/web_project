@@ -1,16 +1,31 @@
+/* Ensure the page is scrollable */
+html, body {
+    height: 100%;
+    overflow-y: auto;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    margin-bottom: 500px; /* Added large bottom margin for scroll testing */
 }
 
-.navbar {
+.bar {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Reverted to space-between */
     align-items: center;
     background-color: hsl(0, 0%, 100%);
     padding: 10px;
     border-bottom: 1px solid #ddd;
+}
+
+header {
+    position: sticky; /* Makes the header stick to the top when scrolling */
+    top: 0;
+    z-index: 1000; /* Ensures it stays above other elements */
+    background-color: white; /* Ensure visibility */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
 }
 
 .logo {
@@ -20,18 +35,24 @@ body {
 }
 
 .search-bar {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .search-bar input {
-    width: 580px;
+    width: 570px;
     font-size: 16px;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 20px;
     outline: none;
+}
+
+.search-bar input::placeholder {
+    margin-left: 20px;
+    padding-left: 10px;
 }
 
 .search-bar button {
@@ -46,19 +67,55 @@ body {
     height: 20px;
 }
 
+/* mypage 링크 스타일 유지 */
 .mypage {
-    align-items: center;
-    padding: 10px 20px;
-    margin-right: 20px;
+    padding: 10px 0;
+    margin-right: 30px; /* Increased right margin by 10px */
+    margin-left: 10px; /* Added left margin to create space from the wall */
 }
 
 .mypage a {
+    font-size: 1rem;
+    font-weight: 500;
     color: #333;
-    font-size: 14px;
+    text-decoration: none;
 }
 
 .mypage a:hover {
     color: #007BFF;
+}
+
+.notification {
+    margin-right: 10px;
+}
+
+.mypage,
+.notification {
+    display: flex;
+    align-items: center;
+}
+
+/* 알림 아이콘 버튼 스타일 */
+.notification button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.notification img {
+    width: 20px;
+    height: 20px;
+}
+
+.mypage a:hover {
+    color: #007BFF;
+}
+
+.mypage-notification-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align mypage and notification next to each other */
 }
 
 .menu {
@@ -78,4 +135,120 @@ body {
 
 .menu a:hover {
     color: #007BFF;
+}
+
+/* Main content section */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 50px; /* Increased top padding to lower the sections */
+    background-color: #f7f9fc;
+    height: auto; /* Adjust height dynamically */
+}
+
+.main-content .left-section {
+    flex: 3;
+    margin-left: 50px;
+    margin-right: 20px; /* Increased space between left and right sections */
+    background-color: #d3d3d3;
+    padding: 20px;
+    border-radius: 10px;
+    height: auto; /* Allow sections to adjust height dynamically */
+}
+
+.main-content .left-section h2 {
+    margin-left: 20px; /* Align with the left edge of the card */
+}
+
+.main-content .right-section {
+    flex: 1;
+    background-color: #d3d3d3;
+    padding: 20px;
+    margin-right: 50px;
+    margin-left: 20px; /* Increased space between left and right sections */
+    border-radius: 10px;
+    height: auto; /* Allow sections to adjust height dynamically */
+}
+
+.cve-box {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* CVE Card Styles */
+.card {
+    width: 520px;
+    height: 140px;
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-left: 20px;
+    margin-bottom: 10px; /* Added space below each card */
+}
+
+.card + .card {
+    margin-top: 30px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.detail-btn {
+    width: 60px;
+    height: 32px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.description {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #444;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.severity {
+    font-size: 13px;
+}
+
+.critical {
+    color: #d32f2f;
+    font-weight: 500;
+}
+
+.tag {
+    font-size: 12px;
+    background: #eee;
+    border-radius: 6px;
+    padding: 4px 8px;
+}
+
+.high {
+    color: #ffa000;
+    font-weight: 500;
 }
