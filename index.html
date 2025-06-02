@@ -1,142 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-  <link rel="stylesheet" 
-        as="style" 
-        onload="this.rel='stylesheet'" 
-        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
-  <title>Stitch Design</title>
-  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="styles.css" />
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+	<link rel="stylesheet" 
+		as="style" 
+		onload="this.rel='stylesheet'" 
+		href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
+	<title>SecureHub</title>
+	<link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="left-section">
-        <a href="" class="logo">
-          <div class="logo-icon">
-            <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"/>
-            </svg>
-          </div>
-          <h2 class="logo-text">SecureHub</h2>
-        </a>
-        <div class="nav-links">
-          <a href="#">Dashboard</a>
-          <a href="#">CVEs</a>
-          <a href="#">News</a>
-          <a href="#">Alerts</a>
-        </div>
-      </div>
-      <div class="right-section">
-        <div class="search-box">
-          <div class="search-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-              <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/>
-            </svg>
-          </div>
-          <input class="search-input" type="text" placeholder="Search" />
-        </div>
-        <button class="bell-button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-            <path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"/>
-          </svg>
-        </button>
-        <div
-          class="avatar"
-          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDObsHfm9O7Yf5YEz5X5UcP8wmv8xHMpbaFaL0dcNL_8oVRDJQPij_jIGo1zb5ci06KyK-owO03qqFbodt9XSO-R5PDup-1yLkZA3mPyEGLMukPFKQzXSImUvXOoN2UMpl6rLsPFPCOZplq0qcn38L_Lc6h_cr_aOfG9jRxcb6CQip3Ug8ZFdS2QRE4-kjea15W43QZHaxVNyLrU4liy2HHwoit1-wPo2qEoo1wKHvcy5WhYB_1Rie96vx4LYLqnQgBeB-LpXkn3A");'>
-        </div>
-      </div>
-    </header>
-    <div class="layout-content-container">
-      <div class="section-header">
-        <div class="title-block">
-            <p class="title">Security Overview</p>
-            <p class="subtitle">Stay informed with the latest security updates and insights.</p>
-        </div>
-      </div>
-
-      <h2 class="section-title">Trending CVEs</h2>
-      <div class="scroll-wrapper">
-        <div class="card-row">
-          <div class="cve-card">
-            <div>
-              <p class="card-title">CVE-2023-7890: Remote code execution in application X</p>
-              <p class="card-desc">Exploitable vulnerability, update to version 3.1.2 or later.</p>
-              <div class="severity-tags">
-                <span class="severity critical">● Critical</span>
-                <span class="tag">#RCE</span>
-                <span class="tag">#Apache</span>
-              </div>
-            </div>
-          </div>
-          <div class="cve-card">
-            <div>
-              <p class="card-title">CVE-2023-7890: Remote code execution in application X</p>
-              <p class="card-desc">Exploitable vulnerability, update to version 3.1.2 or later.</p>
-              <div class="severity-tags">
-                <span class="severity high">● High</span>
-                <span class="tag">#RCE</span>
-                <span class="tag">#Apache</span>
-              </div>
-            </div>
-          </div>
-          <div class="cve-card">
-            <div>
-              <p class="card-title">CVE-2023-7890: Remote code execution in application X</p>
-              <p class="card-desc">Exploitable vulnerability, update to version 3.1.2 or later.</p>
-              <div class="severity-tags">
-                <span class="severity critical">● Critical</span>
-                <span class="tag">#RCE</span>
-                <span class="tag">#Apache</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h2 class="section-title">Top Security News</h2>
-      <div class="news-card">
-        <div class="news-text">
-          <p class="news-title">New Ransomware Campaign Targets Healthcare Sector</p>
-          <p class="news-desc">A new ransomware group, 'ShadowNet', is actively targeting healthcare organizations, demanding large ransoms for data decryption.</p>
-        </div>
-        <div class="news-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD08OQfhu9Hvbxyvg9sLQliEky7GYTTUwV0cX0Ubejkic6FlFB1PaLdwmLmOPupMbyaF7BQOlWlQBiKPv6YyASscleZXNR2abRm7CBgdYizZP233luCEMJqhCZRDsRkc41vv48803Pd2yZoMX5gkFxhEBK6SyNgCDEjR0pA6LpmF1YJfCfMr2BKnTfkjn36A9CvpPyWSOBQD_A6TrGSLacaaudoF0wx8RQGj8Ov1rLHR6eWJtG80ZNTLo_qpCmlonsvCrEScx_fYw');"></div>
-      </div>
-
-      <div class="news-card">
-        <div class="news-text">
-          <p class="news-title">Zero-Day Exploit Found in Popular Browser</p>
-          <p class="news-desc">A zero-day vulnerability has been discovered in the widely used 'WebExplorer' browser, allowing attackers to execute arbitrary code.</p>
-        </div>
-        <div class="news-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhLGDTft0It4z0SabEBTi56MG81X24-RBk7AlhpKDzuwKMw5TPf70yNP17SKgQmU4hzUQGc8j0rVJcboGY6_MGEOWYLND1OBLfmVOgb_R5nqBP26gkRlvBYGQCxLc7BNRjjaqszJwLH-9GvX2SO4LC-LriQ7dSsmnXD9Uj2fyv_IsUvj0lCX_7Ic4tSAB7mXIWxe1W9Z8M-fhmiTL1F7GlI4rejg4qaeO9otRl_ymFQZ2MrO94hMpNaL911wb730H8lmG9u7Yp0w');"></div>
-      </div>
-
-      <h2 class="section-title">Recent Exploits</h2>
-      <div class="news-card">
-        <div class="news-text">
-          <p class="news-title">Exploit for CVE-2023-4567 Released</p>
-          <p class="news-desc">An exploit for the recently discovered web server vulnerability (CVE-2023-4567) has been released, increasing the risk of attacks.</p>
-        </div>
-        <div class="news-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDjjzKz3U-arUp8CM5Li3XTCp78E59PQ5FcT0-dwz2vS4MqjtTyprexyAcU_HohbL8tCBUlTAcTnBa4WaYQ8ZSXDIubjhLatImxnQaBgC3ANMRdhiR5QaNm2JppUj8iyNEi3YwLrL9SXQT7uo5jqA5Gcbs62S3NvcPpc-FAdLE61gCd3HBrGDtgk8UFkiIEESR7gQSOj6XDO6taOEg9FyJKkbhcSMpob0Bj2t6ljK91PAH-E2KaOkSFdtvEKP_zZlwFS60RHwoBbg');"></div>
-      </div>
-
-      <h2 class="section-title">Vendor Alerts</h2>
-      <div class="news-card">
-        <div class="news-text">
-          <p class="news-title">TechCorp Releases Security Advisory</p>
-          <p class="news-desc">TechCorp has issued a security advisory regarding multiple vulnerabilities in their networking devices. Firmware updates are available.</p>
-        </div>
-        <div class="news-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA6U_lw_UoXSoVzQzsbE_BiSGy12kDPTHCYxsm-D4pFuw_AelZKeLrQUG2ce8XiJDvdxxL6ZSr_5AoBZngkx6OMx65zOUVmtPOSDFacsgs-frJDYTdbdk4P-IfWSe7MVRItqgJNvn2NJaWUa2idrxO4ZjexJxWCz-xpMIJdtz3tzqkDIF-0pFluXW8IpkMinWYDhcDGOcTMmD5EYZ9sYpvkv5rXgLou2O78KtFv_MfL9qEHPCdZeiM2t8-UizU6Lg6aevHKFkAUtw');"></div>
-      </div>
-
-      <div class="button-group">
-        <button class="btn btn-blue">Search CVEs</button>
-        <button class="btn btn-dark">Personalized Recommendations</button>
-      </div>
-    </div>
-  </div>
+	<div class="container">
+		<header>
+			<div class="left-section">
+				<a href="" class="logo">
+					<div class="logo-icon">
+						<svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"/>
+						</svg>
+					</div>
+					<h2 class="logo-text">SecureHub</h2>
+				</a>
+				<div class="nav-links">
+					<a href="#">Dashboard</a>
+					<a href="#">CVEs</a>
+					<a href="#">News</a>
+					<a href="#">Alerts</a>
+				</div>
+			</div>
+			<div class="right-section">
+				<div class="search-box">
+					<div class="search-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+							<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/>
+						</svg>
+					</div>
+					<input class="search-input" type="text" placeholder="Search" />
+				</div>
+				<button class="bell-button" id="bell-button">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" id="bell-icon" viewBox="0 0 256 256">
+	<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z" fill="#ff9800"/>
+</svg>
+				</button>
+				<div
+					class="avatar"
+					style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDObsHfm9O7Yf5YEz5X5UcP8wmv8xHMpbaFaL0dcNL_8oVRDJQPij_jIGo1zb5ci06KyK-owO03qqFbodt9XSO-R5PDup-1yLkZA3mPyEGLMukPFKQzXSImUvXOoN2UMpl6rLsPFPCOZplq0qcn38L_Lc6h_cr_aOfG9jRxcb6CQip3Ug8ZFdS2QRE4-kjea15W43QZHaxVNyLrU4liy2HHwoit1-wPo2qEoo1wKHvcy5WhYB_1Rie96vx4LYLqnQgBeB-LpXkn3A");'>
+				</div>
+			</div>
+		</header>
+		<div class="layout-content-container">
+			<div class="section-header">
+				<div class="title-block">
+					<p class="title">Security Overview</p>
+					<p class="subtitle">Stay informed with the latest security updates and insights.</p>
+				</div>
+			</div>
+			<h2 class="section-title">Trending CVEs</h2>
+			<div class="scroll-wrapper">
+				<div class="card-row">
+					<a href="#" class="cve-card no-link-style">
+						<div>
+							<p class="card-title">CVE-2023-7890: Remote code execution in application X</p>
+							<p class="card-desc">Exploitable vulnerability, update to version 3.1.2 or later.</p>
+							<div class="severity-tags">
+								<span class="severity critical">● Critical</span>
+								<span class="tag">#RCE</span>
+								<span class="tag">#Apache</span>
+							</div>
+						</div>
+					</a>
+					<a href="#" class="cve-card no-link-style">
+						<div>
+							<p class="card-title">CVE-2023-7890: Remote code execution in application X</p>
+							<p class="card-desc">Exploitable vulnerability, update to version 3.1.2 or later.</p>
+							<div class="severity-tags">
+								<span class="severity high">● High</span>
+								<span class="tag">#RCE</span>
+								<span class="tag">#Apache</span>
+							</div>
+						</div>
+					</a>
+					<a href="#" class="cve-card no-link-style">
+						<div>
+							<p class="card-title">CVE-2023-7890: Remote code execution in application X</p>
+							<p class="card-desc">Exploitable vulnerability, update to version 3.1.2 or later.</p>
+							<div class="severity-tags">
+								<span class="severity normal">● Normal</span>
+								<span class="tag">#RCE</span>
+								<span class="tag">#Apache</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<h2 class="section-title">Top Security News</h2>
+			<a href="#" class="no-link-style">
+				<div class="news-card">
+					<div class="news-text">
+						<p class="news-title">New Ransomware Campaign Targets Healthcare Sector</p>
+						<p class="news-desc">A new ransomware group, 'ShadowNet', is actively targeting healthcare organizations, demanding large ransoms for data decryption.</p>
+					</div>
+					<div class="news-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD08OQfhu9Hvbxyvg9sLQliEky7GYTTUwV0cX0Ubejkic6FlFB1PaLdwmLmOPupMbyaF7BQOlWlQBiKPv6YyASscleZXNR2abRm7CBgdYizZP233luCEMJqhCZRDsRkc41vv48803Pd2yZoMX5gkFxhEBK6SyNgCDEjR0pA6LpmF1YJfCfMr2BKnTfkjn36A9CvpPyWSOBQD_A6TrGSLacaaudoF0wx8RQGj8Ov1rLHR6eWJtG80ZNTLo_qpCmlonsvCrEScx_fYw');"></div>
+				</div>
+			</a>
+			<a href="#" class="no-link-style">
+				<div class="news-card">
+					<div class="news-text">
+						<p class="news-title">Zero-Day Exploit Found in Popular Browser</p>
+						<p class="news-desc">A zero-day vulnerability has been discovered in the widely used 'WebExplorer' browser, allowing attackers to execute arbitrary code.</p>
+					</div>
+					<div class="news-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhLGDTft0It4z0SabEBTi56MG81X24-RBk7AlhpKDzuwKMw5TPf70yNP17SKgQmU4hzUQGc8j0rVJcboGY6_MGEOWYLND1OBLfmVOgb_R5nqBP26gkRlvBYGQCxLc7BNRjjaqszJwLH-9GvX2SO4LC-LriQ7dSsmnXD9Uj2fyv_IsUvj0lCX_7Ic4tSAB7mXIWxe1W9Z8M-fhmiTL1F7GlI4rejg4qaeO9otRl_ymFQZ2MrO94hMpNaL911wb730H8lmG9u7Yp0w');"></div>
+				</div>
+			</a>
+			<h2 class="section-title">Recent Exploits</h2>
+      <a href="#" class="no-link-style">
+			<div class="news-card">
+				<div class="news-text">
+					<p class="news-title">Exploit for CVE-2023-4567 Released</p>
+					<p class="news-desc">An exploit for the recently discovered web server vulnerability (CVE-2023-4567) has been released, increasing the risk of attacks.</p>
+				</div>
+				<div class="news-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDjjzKz3U-arUp8CM5Li3XTCp78E59PQ5FcT0-dwz2vS4MqjtTyprexyAcU_HohbL8tCBUlTAcTnBa4WaYQ8ZSXDIubjhLatImxnQaBgC3ANMRdhiR5QaNm2JppUj8iyNEi3YwLrL9SXQT7uo5jqA5Gcbs62S3NvcPpc-FAdLE61gCd3HBrGDtgk8UFkiIEESR7gQSOj6XDO6taOEg9FyJKkbhcSMpob0Bj2t6ljK91PAH-E2KaOkSFdtvEKP_zZlwFS60RHwoBbg');"></div>
+			</div>
+      </a>
+			<h2 class="section-title">Vendor Alerts</h2>
+      <a href="#" class="no-link-style">
+			<div class="news-card">
+				<div class="news-text">
+					<p class="news-title">TechCorp Releases Security Advisory</p>
+					<p class="news-desc">TechCorp has issued a security advisory regarding multiple vulnerabilities in their networking devices. Firmware updates are available.</p>
+				</div>
+				<div class="news-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA6U_lw_UoXSoVzQzsbE_BiSGy12kDPTHCYxsm-D4pFuw_AelZKeLrQUG2ce8XiJDvdxxL6ZSr_5AoBZngkx6OMx65zOUVmtPOSDFacsgs-frJDYTdbdk4P-IfWSe7MVRItqgJNvn2NJaWUa2idrxO4ZjexJxWCz-xpMIJdtz3tzqkDIF-0pFluXW8IpkMinWYDhcDGOcTMmD5EYZ9sYpvkv5rXgLou2O78KtFv_MfL9qEHPCdZeiM2t8-UizU6Lg6aevHKFkAUtw');"></div>
+			</div>
+      </a>
+			<div class="button-bar">
+	<button class="btn btn-dark">Search CVEs</button>
+</div>
+<div class="notification-dropdown" id="notification-dropdown">
+	<div class="notification-dropdown-header">
+		<span>Notifications</span>
+		<button id="mark-read">Mark all as read</button>
+	</div>
+	<div class="notification-list">
+		<div class="notification-item">New CVE updates available.</div>
+		<div class="notification-item">Security advisory from TechCorp.</div>
+		<div class="notification-item">New exploit detected for CVE-2023-4567.</div>
+	</div>
+</div>
+		</div>
+	</div>
+	<script src="script.js"></script>
 </body>
 </html>

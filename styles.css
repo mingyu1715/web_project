@@ -10,6 +10,7 @@ body {
 	flex-direction: column;
 	min-height: 100vh;
 	overflow-x: hidden;
+	padding-top: 72px; /* Add padding to account for the fixed header height */
 }
 
 header {
@@ -19,6 +20,12 @@ header {
 	padding: 12px 40px;
 	border-bottom: 1px solid #283039;
 	white-space: nowrap;
+	position: fixed; /* Fix the header at the top */
+	top: 0; /* Align it to the top */
+	width: 100%; /* Make it span the full width */
+	z-index: 1000; /* Ensure it stays above other elements */
+	background-color: #111418; /* Maintain background color */
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow for better visibility */
 }
 
 .left-section {
@@ -69,12 +76,16 @@ header {
 }
 
 .search-box {
+	position: fixed; /* Fix the search box along with the header */
+	top: 12px; /* Align it within the header */
+	right: 155px; /* Position it next to the bell button */
 	display: flex;
 	height: 40px;
 	min-width: 160px;
 	max-width: 256px;
 	border-radius: 8px;
 	background-color: #283039;
+	z-index: 1001; /* Ensure it stays above other header elements */
 }
 
 .search-icon {
@@ -101,27 +112,96 @@ header {
 }
 
 .bell-button {
+	position: fixed; /* Fix the bell button along with the header */
+	top: 12px; /* Align it within the header */
+	right: 90px; /* Position it next to the avatar */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 40px;
 	padding: 0 10px;
-	background-color: #283039;
-	color: white;
+	background-color: #283039; /* Bright blue for unread notifications */
 	font-size: 0.875rem;
 	font-weight: bold;
 	border: none;
 	border-radius: 8px;
 	cursor: pointer;
+	z-index: 1001; /* Ensure it stays above other header elements */
+}
+
+.bell-button.read {
+	background-color: #283039; /* Dark theme for read notifications */
+}
+
+.notification-dropdown {
+	position: fixed; /* Position relative to the bell button */
+	top: 60px; /* Below the bell button */
+	right: 40px; /* Align with the avatar */
+	width: 300px; /* Set a fixed width */
+	background-color: #1a1d21; /* Match dark theme */
+	border: 1px solid #283039; /* Add border for separation */
+	border-radius: 8px; /* Rounded corners */
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for visibility */
+	display: none; /* Hidden by default */
+	z-index: 1002; /* Ensure it stays above other elements */
+}
+
+.notification-dropdown.active {
+	display: block; /* Show when active */
+}
+
+.notification-dropdown-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 16px;
+	border-bottom: 1px solid #283039;
+	font-size: 1rem;
+	font-weight: bold;
+	color: white;
+}
+
+.notification-dropdown-header button {
+	background-color: #283039;
+	color: #9cabba;
+	border: none;
+	border-radius: 8px;
+	padding: 4px 8px;
+	cursor: pointer;
+	font-size: 0.875rem;
+}
+
+.notification-list {
+	max-height: 200px; /* Limit height */
+	overflow-y: auto; /* Add scroll for overflow */
+}
+
+.notification-item {
+	padding: 12px 16px;
+	border-bottom: 1px solid #283039;
+	color: white; /* Bright white for unread notifications */
+	font-size: 0.875rem;
+}
+
+.notification-item.read {
+	color: #9cabba; /* Dimmed color for read notifications */
+}
+
+.notification-item:last-child {
+	border-bottom: none; /* Remove border for the last item */
 }
 
 .avatar {
+	position: fixed; /* Fix the avatar along with the header */
+	top: 12px; /* Align it within the header */
+	right: 40px; /* Position it on the right side */
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	z-index: 1001; /* Ensure it stays above other header elements */
 }
 
 .layout-content-container {
@@ -149,6 +229,7 @@ header {
 }
 
 .title {
+    margin-bottom: 0;
 	font-size: 32px;
 	font-weight: bold;
 	line-height: 1.2;
@@ -160,9 +241,10 @@ header {
 }
 
 .section-title {
+    margin-bottom: auto;
 	font-size: 22px;
 	font-weight: bold;
-	padding: 12px 8px 8px; /* Reduced padding */
+	padding: 12px 8px 0px; 
 	letter-spacing: -0.015em;
 }
 
@@ -294,10 +376,40 @@ header {
 	color: #ffa500;
 }
 
+.severity.high {
+	color: #ffa500;
+}
+
+.severity.normal {
+	color: #2563EB;
+}
+
 .tag {
 	font-size: 0.75rem;
 	color: #9cabba;
 	background-color: #283039;
 	padding: 2px 8px;
 	border-radius: 4px;
+}
+
+.no-link-style {
+	text-decoration: none; /* Remove underline */
+	color: inherit; /* Keep text color consistent */
+}
+
+.button-bar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 40px; /* Reduced height for thinner appearance */
+	background-color: #283039; /* Match dark theme */
+	margin-top: 16px; /* Add spacing above */
+	border-radius: 20px; /* Increased border radius for rounded appearance */
+}
+
+.button-bar .btn {
+	width: auto;
+	padding: 0 24px; /* Adjust padding for larger button */
+	font-size: 1rem; /* Keep font size consistent */
 }
