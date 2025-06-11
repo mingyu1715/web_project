@@ -1,0 +1,290 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.search-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.search-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 280px;
+}
+
+.main-title {
+    margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  line-height: 1.2;
+}
+
+.main-subtitle {
+  color: #9cabba;
+  font-size: 14px;
+}
+
+.search-bar {
+    margin: 0;
+    padding: 10px 16px 10px 16px; /* 위아래 패딩을 늘려줌 */
+}
+
+.search-input-wrapper {
+    width: 100%;
+    height: 48px; /* 높이 증가 */
+}
+
+.search-input-container {
+    display: flex;
+    align-items: center;
+    background-color: #283039;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 48px; /* 높이 증가 */
+}
+
+.search-icon {
+  padding-left: 16px;
+  color: #9cabba;
+}
+
+.section-title {
+    margin: 0;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px 16px 8px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 16px 16px;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  background-color: #283039;
+  color: white;
+  font-size: 14px;
+  padding: 0 12px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-dropdown {
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+.view-toggle {
+  position: relative;
+  display: flex;
+  border-bottom: 1.5px solid #232b36;
+  margin-bottom: 16px;
+}
+
+.view-tab {
+  position: relative;
+  padding: 10px 24px;
+  color: #9cabba;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.view-tab.active {
+  color: #fff;
+}
+
+.view-toggle-underline {
+  position: absolute;
+  bottom: -1.5px;
+  left: 0;
+  height: 2px;
+  width: 80px; /* Adjust to match tab width */
+  background: #ff9800;
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.result-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  gap: 16px;
+  background-color: transparent;
+}
+
+.cve-card-with-image {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: transparent; /* 배경 필요 시 추가 */
+}
+
+.cve-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 2;
+}
+
+.cve-text > * {
+    margin: 4px;
+}
+
+.cve-id {
+  color: #9cabba;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.cve-title {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cve-description {
+  color: #9cabba;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.cve-image {
+  flex: 1;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+}
+
+.page-icon, .page-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.page-number.active {
+  background-color: #283039;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  min-width: 160px;
+  background: #22262c;
+  border: 1px solid #283039;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  z-index: 10;
+  padding: 8px 0;
+}
+
+.dropdown-menu .dropdown-item {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  text-align: left;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  background: #283039;
+  color: #ff9800;
+}
+
+/* Show menu when open (JS sets display:block) */
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.cve-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cve-table th {
+  color: #9cabba;
+  text-align: left;
+  padding: 8px;
+}
+
+.cve-table td {
+  padding: 8px;
+  color: #fff;
+}
+
+.cve-table td:last-child {
+  color: #9cabba;
+}
+
+.results-list {
+  transition: opacity 0.3s;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.results-list.hide {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.results-list.show {
+  opacity: 1;
+  pointer-events: auto;
+  position: static;
+  z-index: 1;
+}

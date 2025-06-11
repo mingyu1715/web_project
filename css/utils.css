@@ -1,0 +1,5 @@
+
+.no-link-style {
+	text-decoration: none; /* Remove underline */
+	color: inherit; /* Keep text color consistent */
+}

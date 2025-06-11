@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<link rel="stylesheet" href="styles.css" />
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/header.css" />
+	<link rel="stylesheet" href="css/utils.css" />
+	<link rel="stylesheet" href="css/pages/index.css" />
 	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
 	<link rel="stylesheet" 
 		as="style" 
@@ -135,19 +138,20 @@
 			</div>
       </a>
 			<div class="button-bar">
-	<button class="btn btn-dark">Search CVEs</button>
-</div>
-<div class="notification-dropdown" id="notification-dropdown">
-	<div class="notification-dropdown-header">
-		<span>Notifications</span>
-		<button id="mark-read">Mark all as read</button>
-	</div>
-	<div class="notification-list">
-		<div class="notification-item">New CVE updates available.</div>
-		<div class="notification-item">Security advisory from TechCorp.</div>
-		<div class="notification-item">New exploit detected for CVE-2023-4567.</div>
-	</div>
-</div>
+				<button class="btn btn-dark" onclick="location.href='cves.html'">Search CVEs</button>
+			</div>
+			<!-- Notification Dropdown -->
+			<div class="notification-dropdown" id="notification-dropdown">
+				<div class="notification-dropdown-header">
+					<span>Notifications</span>
+					<button id="mark-read">Mark all as read</button>
+				</div>
+				<div class="notification-list">
+					<div class="notification-item">New CVE updates available.</div>
+					<div class="notification-item">Security advisory from TechCorp.</div>
+					<div class="notification-item">New exploit detected for CVE-2023-4567.</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<script src="script.js"></script>
