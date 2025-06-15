@@ -1,0 +1,115 @@
+.layout-container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 40px;
+      }
+      .header {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 16px;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+      .tag {
+        background-color: #283039;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .news-card {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+      .news-text {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .news-title {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.25;
+      }
+      .news-description {
+        font-size: 14px;
+        color: #9cabba;
+        line-height: 1.5;
+      }
+      .news-button {
+        background-color: #283039;
+        padding: 8px 16px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 8px;
+        width: fit-content;
+        cursor: pointer;
+      }
+      .news-image {
+        flex: 1;
+        aspect-ratio: 16 / 9;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+      }
+      .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 40px;
+      }
+      .pagination a {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .pagination a.active {
+        background-color: #283039;
+        font-weight: bold;
+        letter-spacing: 0.015em;
+      }
+      /* 메인 뉴스 타이틀 */
+      .main-news-title {
+        font-size: 2.2em;
+        font-weight: 900;
+        margin-bottom: 1.5em;
+        color: #fff;
+      }
+      
+      /* Top Trending News 타이틀 */
+      .trending-title {
+        font-size: 1.3em;
+        font-weight: 700;
+        margin-bottom: 1em;
+        color: #fff;
+        letter-spacing: -0.5px;
+      }
+      
+      /* Recommended For You 타이틀 */
+      .recommended-title {
+        font-size: 1.15em;
+        font-weight: 600;
+        margin-bottom: 0.8em;
+        color: #fff;
+        letter-spacing: -0.2px;
+      }
+      
+      /* 구분선 */
+      .news-divider {
+        border: 0;
+        border-top: 2px solid #e5e7eb;
+        margin: 2.5em 0 2em 0;
+      }

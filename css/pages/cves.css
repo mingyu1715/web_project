@@ -244,6 +244,11 @@
   color: #ff9800;
 }
 
+.dropdown-item.selected-item {
+  color: #1976d2;
+  font-weight: 500;
+}
+
 /* Show menu when open (JS sets display:block) */
 .dropdown.open .dropdown-menu {
   display: block;

@@ -86,7 +86,7 @@
         <section>
           <h3 class="section-title">Filters</h3>
           <div class="filter-buttons">
-            <div class="dropdown">
+            <div class="dropdown" data-filter="date">
               <button class="filter-button dropdown-toggle">Date <span class="icon-dropdown">▼</span></button>
               <div class="dropdown-menu">
                 <button class="dropdown-item">Last 24 hours</button>
@@ -94,7 +94,7 @@
                 <button class="dropdown-item">Last 30 days</button>
               </div>
             </div>
-            <div class="dropdown">
+            <div class="dropdown" data-filter="vendor">
               <button class="filter-button dropdown-toggle">Vendor <span class="icon-dropdown">▼</span></button>
               <div class="dropdown-menu">
                 <button class="dropdown-item">Microsoft</button>
@@ -102,7 +102,7 @@
                 <button class="dropdown-item">Google</button>
               </div>
             </div>
-            <div class="dropdown">
+            <div class="dropdown" data-filter="platform">
               <button class="filter-button dropdown-toggle">Platform <span class="icon-dropdown">▼</span></button>
               <div class="dropdown-menu">
                 <button class="dropdown-item">Windows</button>
@@ -110,7 +110,7 @@
                 <button class="dropdown-item">macOS</button>
               </div>
             </div>
-            <div class="dropdown">
+            <div class="dropdown" data-filter="type">
               <button class="filter-button dropdown-toggle">Vulnerability Type <span class="icon-dropdown">▼</span></button>
               <div class="dropdown-menu">
                 <button class="dropdown-item">RCE</button>
@@ -118,7 +118,7 @@
                 <button class="dropdown-item">SQL Injection</button>
               </div>
             </div>
-            <div class="dropdown">
+            <div class="dropdown" data-filter="severity">
               <button class="filter-button dropdown-toggle">Severity <span class="icon-dropdown">▼</span></button>
               <div class="dropdown-menu">
                 <button class="dropdown-item">Critical</button>
@@ -218,13 +218,13 @@
             </table>
           </div>
           <nav class="pagination">
-            <a href="#" class="page-icon">←</a>
+            <a href="#" class="page-icon" id="page-prev">←</a>
             <a href="#" class="page-number active">1</a>
             <a href="#" class="page-number">2</a>
             <a href="#" class="page-number">3</a>
             <a href="#" class="page-number">4</a>
             <a href="#" class="page-number">5</a>
-            <a href="#" class="page-icon">→</a>
+            <a href="#" class="page-icon" id="page-next">→</a>
           </nav>
         </section>
       </main>
