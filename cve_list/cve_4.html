@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SecureHub - Search Security Information</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/utils.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap"
+  />
+  <style>
+    /* Main content area */
+    .cve-main-bg {
+      background: #111418;
+      min-height: 100vh;
+      font-family: Inter, "Noto Sans", sans-serif;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .cve-layout-container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      height: 100%;
+    }
+    .cve-content-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 24px 24px 24px 24px;
+      flex: 1;
+    }
+    .cve-content-main {
+      max-width: 920px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: none;
+    }
+    .cve-breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 16px;
+      align-items: center;
+    }
+    .cve-breadcrumb a,
+    .cve-breadcrumb span {
+      color: #9cabba;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: normal;
+      text-decoration: none;
+    }
+    .cve-breadcrumb .current {
+      color: #fff;
+    }
+    .cve-title {
+      margin: 0;
+      color: #fff;
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 1.2;
+      padding: 10px 16px 10px 16px;
+      text-align: left;
+      letter-spacing: -0.01em;
+    }
+    .cve-desc {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      padding: 4px 16px 12px 16px;
+    }
+    .cve-section-title {
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      padding: 16px 16px 16px 16px;
+      margin: 0;
+    }
+    .cve-score-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 16px;
+    }
+    .cve-score-box {
+      min-width: 158px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-radius: 12px;
+      padding: 20px;
+      background: #283039;
+    }
+    .cve-score-box p {
+      color: #fff;
+      margin: 0;
+    }
+    .cve-score-label {
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .cve-score-value {
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: -0.01em;
+    }
+    .cve-link-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #111418;
+      padding: 0 16px;
+      min-height: 56px;
+      justify-content: space-between;
+      border-bottom: 1px solid #22262b;
+    }
+    .cve-link-row:last-child {
+      border-bottom: none;
+    }
+    .cve-link-label {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .cve-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      color: #fff;
+    }
+    .cve-side-panel {
+      width: 360px;
+      display: flex;
+      flex-direction: column;
+      background: none;
+    }
+    .cve-tag-list {
+      display: flex;
+      gap: 12px;
+      padding: 12px 12px 12px 0;
+      flex-wrap: wrap;
+    }
+    .cve-tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      padding: 0 16px;
+      border-radius: 8px;
+      background: #283039;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .cve-side-section-title {
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      padding: 24px 16px 8px 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="left-section">
+        <a href="" class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"/>
+            </svg>
+          </div>
+          <h2 class="logo-text">SecureHub</h2>
+        </a>
+        <nav class="nav-links">
+          <a href="../index.html">Dashboard</a>
+          <a href="../cves.html">CVEs</a>
+          <a href="../news.html">News</a>
+          <a href="#">Alerts</a>
+        </nav>
+      </div>
+      <div class="right-section">
+        <div class="search-box">
+          <div class="search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+              <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/>
+            </svg>
+          </div>
+          <input class="search-input" type="text" placeholder="Search" />
+        </div>
+        <button class="bell-button" id="bell-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" id="bell-icon" viewBox="0 0 256 256">
+            <path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z" fill="#ff9800"/>
+          </svg>
+        </button>
+        <div class="avatar"
+          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDObsHfm9O7Yf5YEz5X5UcP8wmv8xHMpbaFaL0dcNL_8oVRDJQPij_jIGo1zb5ci06KyK-owO03qqFbodt9XSO-R5PDup-1yLkZA3mPyEGLMukPFKQzXSImUvXOoN2UMpl6rLsPFPCOZplq0qcn38L_Lc6h_cr_aOfG9jRxcb6CQip3Ug8ZFdS2QRE4-kjea15W43QZHaxVNyLrU4liy2HHwoit1-wPo2qEoo1wKHvcy5WhYB_1Rie96vx4LYLqnQgBeB-LpXkn3A");'>
+        </div>
+      </div>
+    </header>
+
+    <div class="notification-dropdown" id="notification-dropdown">
+      <div class="notification-dropdown-header">
+        <span>Notifications</span>
+        <button id="mark-read">Mark all as read</button>
+      </div>
+      <div class="notification-list">
+        <div class="notification-item">New CVE updates available.</div>
+        <div class="notification-item">Security advisory from TechCorp.</div>
+        <div class="notification-item">New exploit detected for CVE-2023-4567.</div>
+      </div>
+    </div>
+
+    <!-- 본문 시작 -->
+    <div class="cve-main-bg">
+      <div class="cve-layout-container">
+        <div class="cve-content-row">
+          <div class="cve-content-main">
+            <div class="cve-breadcrumb">
+              <a href="#">CVEs</a>
+              <span>/</span>
+              <span class="current">CVE-2024-1020</span>
+            </div>
+            <h2 class="cve-title">
+              CVE-2024-1020: Denial of Service in Messaging Platform
+            </h2>
+            <p class="cve-desc">
+              A denial of service vulnerability in the Messaging Platform allows remote attackers to crash the service by sending specially crafted messages. This issue is caused by improper handling of unexpected input, resulting in application instability.
+            </p>
+            <h3 class="cve-section-title">CVSS Score</h3>
+            <div class="cve-score-row">
+              <div class="cve-score-box">
+                <p class="cve-score-label">CVSS v3.1</p>
+                <p class="cve-score-value">5.7</p>
+              </div>
+            </div>
+            <h3 class="cve-section-title">Affected Systems</h3>
+            <p class="cve-desc">
+              All versions of ChatPro before 1.8.0 are affected. Both desktop and mobile clients are vulnerable.
+            </p>
+            <h3 class="cve-section-title">Related Links</h3>
+            <div class="cve-link-row">
+              <a class="cve-link-label no-link-style" href="#" target="_blank" rel="noopener">Update Announcement</a>
+              <span class="cve-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                </svg>
+              </span>
+            </div>
+            <div class="cve-link-row">
+              <a class="cve-link-label no-link-style" href="#" target="_blank" rel="noopener">Incident Report</a>
+              <span class="cve-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                </svg>
+              </span>
+            </div>
+            <div class="cve-link-row">
+              <a class="cve-link-label no-link-style" href="#" target="_blank" rel="noopener">Mitigation Steps</a>
+              <span class="cve-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="cve-side-panel">
+            <h3 class="cve-side-section-title">Similar CVEs</h3>
+            <div class="cve-link-row">
+              <a class="cve-link-label no-link-style" href="cve_1.html" target="_blank" rel="noopener">CVE-2024-1019</a>
+              <span class="cve-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                </svg>
+              </span>
+            </div>
+            <div class="cve-link-row">
+              <a class="cve-link-label no-link-style" href="cve_2.html" target="_blank" rel="noopener">CVE-2024-1021</a>
+              <span class="cve-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                </svg>
+              </span>
+            </div>
+            <div class="cve-link-row">
+              <a class="cve-link-label no-link-style" href="cve_3.html" target="_blank" rel="noopener">CVE-2024-1022</a>
+              <span class="cve-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                </svg>
+              </span>
+            </div>
+            <h3 class="cve-side-section-title">Tags</h3>
+            <div class="cve-tag-list">
+              <span class="cve-tag">Low</span>
+              <span class="cve-tag">Denial of Service</span>
+              <span class="cve-tag">Messaging</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 본문 끝 -->
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

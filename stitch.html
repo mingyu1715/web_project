@@ -16,156 +16,119 @@
   <body>
     <div class="relative flex size-full min-h-screen flex-col bg-[#111418] dark group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">Security News</p></div>
+        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[920px] flex-1">
+            <div class="flex flex-wrap gap-2 p-4">
+              <a class="text-[#9cabba] text-base font-medium leading-normal" href="#">CVEs</a>
+              <span class="text-[#9cabba] text-base font-medium leading-normal">/</span>
+              <span class="text-white text-base font-medium leading-normal">CVE-2023-4567</span>
+            </div>
+            <h2 class="text-white tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">
+              CVE-2023-4567: Critical Vulnerability in Network Management System
+            </h2>
+            <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
+              A critical vulnerability has been identified in the Network Management System (NMS) software, potentially allowing remote attackers to execute arbitrary code. This
+              flaw stems from improper input validation in the handling of network packets, leading to a buffer overflow. Successful exploitation could result in complete system
+              compromise, including data theft and denial of service.
+            </p>
+            <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">CVSS Score</h3>
+            <div class="flex flex-wrap gap-4 p-4">
+              <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 bg-[#283039]">
+                <p class="text-white text-base font-medium leading-normal">CVSS v3.1</p>
+                <p class="text-white tracking-light text-2xl font-bold leading-tight">9.8</p>
+              </div>
+            </div>
+            <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Affected Systems</h3>
+            <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
+              This vulnerability affects all versions of the Network Management System (NMS) prior to version 2.5.3. Systems running on Windows, Linux, and macOS are susceptible.
+            </p>
+            <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Related Links</h3>
+            <div class="flex items-center gap-4 bg-[#111418] px-4 min-h-14 justify-between">
+              <p class="text-white text-base font-normal leading-normal flex-1 truncate">Patch Notes</p>
+              <div class="shrink-0">
+                <div class="text-white flex size-7 items-center justify-center" data-icon="ArrowRight" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#111418] px-4 min-h-14 justify-between">
+              <p class="text-white text-base font-normal leading-normal flex-1 truncate">Exploit DB Entry</p>
+              <div class="shrink-0">
+                <div class="text-white flex size-7 items-center justify-center" data-icon="ArrowRight" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#111418] px-4 min-h-14 justify-between">
+              <p class="text-white text-base font-normal leading-normal flex-1 truncate">Official Advisory</p>
+              <div class="shrink-0">
+                <div class="text-white flex size-7 items-center justify-center" data-icon="ArrowRight" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layout-content-container flex flex-col w-[360px]">
+            <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Similar CVEs</h3>
+            <div class="flex items-center gap-4 bg-[#111418] px-4 min-h-14 justify-between">
+              <p class="text-white text-base font-normal leading-normal flex-1 truncate">CVE-2023-4568</p>
+              <div class="shrink-0">
+                <div class="text-white flex size-7 items-center justify-center" data-icon="ArrowRight" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#111418] px-4 min-h-14 justify-between">
+              <p class="text-white text-base font-normal leading-normal flex-1 truncate">CVE-2023-4569</p>
+              <div class="shrink-0">
+                <div class="text-white flex size-7 items-center justify-center" data-icon="ArrowRight" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#111418] px-4 min-h-14 justify-between">
+              <p class="text-white text-base font-normal leading-normal flex-1 truncate">CVE-2023-4570</p>
+              <div class="shrink-0">
+                <div class="text-white flex size-7 items-center justify-center" data-icon="ArrowRight" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Tags</h3>
             <div class="flex gap-3 p-3 flex-wrap pr-4">
               <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#283039] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">Vulnerabilities</p>
+                <p class="text-white text-sm font-medium leading-normal">Critical</p>
               </div>
               <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#283039] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">Exploits</p>
+                <p class="text-white text-sm font-medium leading-normal">Remote Code Execution</p>
               </div>
               <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#283039] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">Data Breaches</p>
+                <p class="text-white text-sm font-medium leading-normal">Buffer Overflow</p>
               </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#283039] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">Malware</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#283039] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">Phishing</p>
-              </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-lg">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-white text-base font-bold leading-tight">Critical Vulnerability Discovered in Widely Used Software Library</p>
-                    <p class="text-[#9cabba] text-sm font-normal leading-normal">
-                      A high-severity vulnerability has been identified in the popular 'DataStream' library, potentially affecting millions of applications. The vulnerability,
-                      tracked as CVE-2023-45678, allows for remote code execution if exploited. Users are advised to update to the latest version immediately.
-                    </p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#283039] text-white text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">CVE-2023-45678</span>
-                  </button>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjpdL107MO7YtwbTFIVJSGKCDbHue1PbJvtmTZXuxJGMVkZ_w78KS3DHRXK1LLIArUZYPQ6xg4PpoaxoiL2dqmP2rBBL0ddcsTJLGitwQsvFCaHbPyHqAdBq5eU6zLKaKBM124V8bWJTQXNMdV-CCX7f495UriTugYf1ersBeWy0S2z4R_dwnAHhpHi5I1We17Ld4moZnylxm1jgZZtUzOcmJMoyjJLvKmOG9TFHLrsQRvu7A_yvN87eNssF0xHWuYiO18c9gcCA");'
-                ></div>
-              </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-lg">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-white text-base font-bold leading-tight">New Ransomware Variant Targets Healthcare Providers</p>
-                    <p class="text-[#9cabba] text-sm font-normal leading-normal">
-                      A new ransomware variant, dubbed 'MediLock', is specifically targeting healthcare providers, encrypting critical patient data and demanding large ransoms.
-                      Security experts warn that this variant is highly sophisticated and requires immediate attention from IT staff.
-                    </p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#283039] text-white text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">Learn More</span>
-                  </button>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDjc_qMYG_rUZxgc3dIibfaW4sd8Ichcqq0DjHX5wpuzjDRiNUxdgGIqIFLvqi2yWN7eHucN7cXJlpX1zu0upD3slJ5OdYkdK6ruudgJ_-4gG66P8amPaS1dMaxfRmHxklsfcSzOBDYpPEdl88QwhrT7PD16ruJK9S2dMakMJrx96GkNqOE5MnD-PIL1xtRnUetCRGWcWnY-Oy3ursDHjKyWRY0QjZT_mq4SLjWgHRZw-7LtYJB6XDZyLHeG2mfGjBnclrYWylOA");'
-                ></div>
-              </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-lg">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-white text-base font-bold leading-tight">Massive Data Breach at Retail Giant Exposes Customer Information</p>
-                    <p class="text-[#9cabba] text-sm font-normal leading-normal">
-                      A major retail chain, 'GlobalMart', has suffered a significant data breach, exposing sensitive customer information, including credit card details and
-                      personal addresses. The breach, attributed to a sophisticated cyberattack, is under investigation by law enforcement.
-                    </p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#283039] text-white text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">Learn More</span>
-                  </button>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4Bd7SfZbcQJAq4bjmA1OgNTOIRly3dL7H4ODfeXIY7s_SNGDpXdgD0fp2XyD5H4LWu7YogSU4gtXirGaP-XMKMhK1szIpUgxzN5cGcLEqhYOPLsD7tXLL_hMIHenvpLZymFGqyBIy0BdCpuaGR067WfFTqPQbREjtaUgZ_ZQXGl6hUGBSkApxEy8AL4h73DQMjjZ0Z82gR2YwZmp1I47I-8a_7-MrS4WNCozKvJsSgnL_0OjJRZW1WEZ4HUCljanqP3dcnHL0rg");'
-                ></div>
-              </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-lg">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-white text-base font-bold leading-tight">Zero-Day Exploit Found in Popular Web Browser</p>
-                    <p class="text-[#9cabba] text-sm font-normal leading-normal">
-                      A zero-day exploit has been discovered in the 'WebSurfer' browser, allowing attackers to bypass security measures and execute arbitrary code. The browser
-                      vendor has released an emergency patch and urges users to update immediately.
-                    </p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#283039] text-white text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">Learn More</span>
-                  </button>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzectTJogkxU9U1THRYtDKetg7yr77MkFXIS9cRgMCOGJiGoonVOBBe3q5idhGjKRvS2ZLHcLJzKo6AwhmElsmPnIkMOaSDvfk87cIuPpceGBltuchgG1RtDWTwcuHiplmP2YLOnF28RlyYQNyv-ccj4fH93mcmwffhlI5oAblKlPNq746ZMAln_xm98RV9gUW7Su-wyIutaEPVjQ6aT21peTNUPPQElLAl6xlMntm82Rus87vdS1tQMWZ7ESCFzC8PzD2ErM8Pw");'
-                ></div>
-              </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-lg">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-white text-base font-bold leading-tight">Phishing Campaign Impersonates Government Agency</p>
-                    <p class="text-[#9cabba] text-sm font-normal leading-normal">
-                      A widespread phishing campaign is targeting individuals by impersonating a government agency, tricking them into revealing personal information. The emails
-                      contain malicious links that lead to fake websites designed to steal credentials.
-                    </p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-8 px-4 flex-row-reverse bg-[#283039] text-white text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">Learn More</span>
-                  </button>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0lKOXq6QY5dlhK-U7awQBazG0SID4S-QnymCKtbSrbxFyXYdX4Msl0R9A6Z9SusBCUcvBWnCFTF6j38Ao49hUFjgg8aHUGho78EMo7kzhCPm8CcuEnNGBk7F8mnARoyjNJTb4HNon-5qaUpxBqa_D0a7U2ys2A040OlN8Uo9mzmF7FErPDzg0a0DF_Mh621OvQ-CqLIdb8OmTx92gVefY-zLdp7irHAHMi4Z1z_poGc5T7VC3v5XpX2y-a6rl93iiwSc-WWiU9Q");'
-                ></div>
-              </div>
-            </div>
-            <div class="flex items-center justify-center p-4">
-              <a href="#" class="flex size-10 items-center justify-center">
-                <div class="text-white" data-icon="CaretLeft" data-size="18px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
-                  </svg>
-                </div>
-              </a>
-              <a class="text-sm font-bold leading-normal tracking-[0.015em] flex size-10 items-center justify-center text-white rounded-full bg-[#283039]" href="#">1</a>
-              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white rounded-full" href="#">2</a>
-              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white rounded-full" href="#">3</a>
-              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white rounded-full" href="#">4</a>
-              <a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-white rounded-full" href="#">5</a>
-              <a href="#" class="flex size-10 items-center justify-center">
-                <div class="text-white" data-icon="CaretRight" data-size="18px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
-                  </svg>
-                </div>
-              </a>
             </div>
           </div>
         </div>
