@@ -214,7 +214,15 @@
           </svg>
         </button>
         <div class="avatar"
-          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDObsHfm9O7Yf5YEz5X5UcP8wmv8xHMpbaFaL0dcNL_8oVRDJQPij_jIGo1zb5ci06KyK-owO03qqFbodt9XSO-R5PDup-1yLkZA3mPyEGLMukPFKQzXSImUvXOoN2UMpl6rLsPFPCOZplq0qcn38L_Lc6h_cr_aOfG9jRxcb6CQip3Ug8ZFdS2QRE4-kjea15W43QZHaxVNyLrU4liy2HHwoit1-wPo2qEoo1wKHvcy5WhYB_1Rie96vx4LYLqnQgBeB-LpXkn3A");'>
+          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDObsHfm9O7Yf5YEz5X5UcP8wmv8xHMpbaFaL0dcNL_8oVRDJQPij_jIGo1zb5ci06KyK-owO03qqFbodt9XSO-R5PDup-1yLkZA3mPyEGLMukPFKQzXSImUvXOoN2UMpl6rLsPFPCOZplq0qcn38L_Lc6h_cr_aOfG9jRxcb6CQip3Ug8ZFdS2QRE4-kjea15W43QZHaxVNyLrU4liy2HHwoit1-wPo2qEoo1wKHvcy5WhYB_1Rie96vx4LYLqnQgBeB-LpXkn3A");'
+          id="avatar-btn">
+        </div>
+        <!-- 중앙 설정 오버레이 -->
+        <div id="settings-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:2000; align-items:center; justify-content:center;">
+          <div style="background:none; border-radius:16px; width:90vw; height:90vh; max-width:1200px; max-height:900px; padding:0; position:relative; display:flex; flex-direction:column; align-items:center;">
+            <button id="close-settings-modal" style="position:absolute; top:24px; right:32px; background:none; border:none; font-size:40px; color:#fff; cursor:pointer; z-index:10;">&times;</button>
+            <iframe src="../setting.html" style="width:100%;height:100%;min-height:500px;border:none;flex:1 1 auto; background:transparent;"></iframe>
+          </div>
         </div>
       </div>
     </header>
@@ -324,5 +332,24 @@
   </div>
 
   <script src="../script.js"></script>
+  <script>
+    // 아바타 클릭 시 오버레이로 설정 모달 표시
+    const avatarBtn = document.getElementById('avatar-btn');
+    const settingsModal = document.getElementById('settings-modal');
+    const closeSettingsModal = document.getElementById('close-settings-modal');
+    avatarBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      settingsModal.style.display = 'flex';
+    });
+    closeSettingsModal.addEventListener('click', function() {
+      settingsModal.style.display = 'none';
+    });
+    // 오버레이 바깥 클릭 시 닫기
+    settingsModal.addEventListener('click', function(e) {
+      if (e.target === settingsModal) {
+        settingsModal.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>

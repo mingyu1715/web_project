@@ -1,0 +1,760 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700"
+    />
+    <title>Stitch Design</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <style>
+      html, body {
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: "Spline Sans", "Noto Sans", sans-serif;
+        background: #17191c;
+        color: #fff;
+      }
+      .design-root {
+        position: relative;
+        min-height: 100vh;
+        overflow-x: hidden;
+        font-family: "Spline Sans", "Noto Sans", sans-serif;
+      }
+      .layout-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        flex-grow: 1;
+      }
+      .main-flex {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        gap: 0.25rem;
+        padding: 1.25rem 1.5rem;
+      }
+      .layout-content-container {
+        display: flex;
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 20rem;
+        min-width: 20rem;
+      }
+      .sidebar-inner {
+        display: flex;
+        flex-direction: column;
+        min-height: 700px;
+        justify-content: space-between;
+        background: #17191c;
+        padding: 1rem;
+        height: 100%;
+      }
+      .sidebar-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .sidebar-link {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.5rem 0.75rem;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        transition: background 0.2s;
+        text-decoration: none;
+      }
+      .sidebar-link.active,
+      .sidebar-link.bg-active,
+      .sidebar-link:active,
+      .sidebar-link:focus {
+        background: #31343a;
+      }
+      .sidebar-link:hover {
+        background: #232529;
+      }
+      .sidebar-link svg {
+        color: #fff;
+      }
+      .sidebar-link p {
+        color: #fff;
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin: 0;
+      }
+      .content-main {
+        display: flex;
+        flex-direction: column;
+        max-width: 960px;
+        flex: 1;
+      }
+      .section-header-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 1rem;
+      }
+      .section-title {
+        color: #fff;
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1.1;
+        min-width: 18rem;
+        letter-spacing: 0.01em;
+        margin: 0;
+      }
+      .section-h2 {
+        color: #fff;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1.1;
+        letter-spacing: -0.015em;
+        padding: 1.25rem 1rem 0.75rem 1rem;
+        margin: 0;
+      }
+      .form-row {
+        display: flex;
+        flex-direction: column;
+        max-width: 480px;
+        gap: 1rem;
+        padding: 0.75rem 1rem;
+      }
+      .form-label {
+        display: flex;
+        flex-direction: column;
+        min-width: 10rem;
+        flex: 1;
+      }
+      .form-label-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .form-label-row-gap2 {
+        display: flex;
+        gap: 0.5rem;
+      }
+      .form-label-row-gap4 {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        flex-wrap: wrap; /* 파일 업로드 버튼이 넘칠 때 줄바꿈 */
+      }
+      /* 파일 업로드 버튼 스타일 명확화 */
+      .profile-upload-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0 1rem;
+        height: 3rem;
+        min-width: 140px;
+        max-width: 200px;
+        border-radius: 0.75rem;
+        background: #31343a;
+        border: 1px solid #464a53;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.2s;
+        white-space: nowrap;
+        justify-content: center;
+      }
+      .profile-upload-btn:hover {
+        background: #232529;
+      }
+      /* 파일명 영역 스타일 */
+      #profile-image-filename {
+        display: inline-block;
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: middle;
+      }
+      .form-label p {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: normal;
+        padding-bottom: 0.5rem;
+        margin: 0;
+      }
+      .form-input,
+      .form-select {
+        width: 100%;
+        min-width: 0;
+        flex: 1;
+        resize: none;
+        overflow: hidden;
+        border-radius: 0.75rem;
+        color: #fff;
+        outline: none;
+        border: 1px solid #464a53;
+        background: #232529;
+        height: 3rem;
+        padding: 15px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: normal;
+        box-sizing: border-box;
+      }
+      .form-input:focus,
+      .form-select:focus {
+        border-color: #464a53;
+      }
+      .form-input::placeholder {
+        color: #a7abb4;
+      }
+      .form-select {
+        /* height: 3.5rem;  기존 높이 제거 */
+        background-image: var(--select-button-svg);
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1.5rem 1.5rem;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding-right: 2.5rem; /* 오른쪽 여백 추가 */
+      }
+      .form-checkbox {
+        height: 1.25rem;
+        width: 1.25rem;
+        accent-color: #a7abb4;
+        background: #232529;
+        border: 1px solid #464a53;
+        border-radius: 0.375rem;
+      }
+      .form-btn,
+      .form-btn-dark,
+      .form-btn-gray {
+        min-width: 84px;
+        max-width: 480px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 0.75rem;
+        height: 3rem;
+        padding: 0 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.015em;
+        border: none;
+        transition: background 0.2s;
+      }
+      .form-btn,
+      .form-btn-dark {
+        background: #232529;
+        color: #fff;
+      }
+      .form-btn:hover,
+      .form-btn-dark:hover {
+        background: #31343a;
+      }
+      .form-btn-gray {
+        background: #31343a;
+        color: #fff;
+      }
+      .form-btn-gray:hover {
+        background: #232529;
+      }
+      .truncate {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .text-xs {
+        font-size: 0.75rem;
+      }
+      .text-base {
+        font-size: 1rem;
+      }
+      .font-medium {
+        font-weight: 500;
+      }
+      .font-bold {
+        font-weight: 700;
+      }
+      .leading-normal {
+        line-height: normal;
+      }
+      .leading-tight {
+        line-height: 1.1;
+      }
+      /* ...existing code... */
+    </style>
+  </head>
+  <body>
+    <div class="design-root" style="--select-button-svg: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(167,171,180)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e');">
+      <div class="layout-container">
+        <div class="main-flex">
+          <div class="layout-content-container sidebar">
+            <div class="sidebar-inner">
+              <div class="sidebar-links">
+                <!-- Sidebar menu with data-section attributes -->
+                <a class="sidebar-link active" data-section="interests">
+                  <div data-icon="House" data-size="24px" data-weight="regular">
+                    <!-- ...SVG... -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"></path>
+                    </svg>
+                  </div>
+                  <p>Interests Configuration</p>
+                </a>
+                <a class="sidebar-link" data-section="notifications">
+                  <div data-icon="ShieldCheck" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M208,40H48A16,16,0,0,0,32,56v58.78c0,89.61,75.82,119.34,91,124.39a15.53,15.53,0,0,0,10,0c15.2-5.05,91-34.78,91-124.39V56A16,16,0,0,0,208,40Zm0,74.79c0,78.42-66.35,104.62-80,109.18-13.53-4.51-80-30.69-80-109.18V56H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.68l50.34-50.34a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"></path>
+                    </svg>
+                  </div>
+                  <p>Notification Settings</p>
+                </a>
+                <a class="sidebar-link" data-section="ui">
+                  <div data-icon="Newspaper" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M88,112a8,8,0,0,1,8-8h80a8,8,0,0,1,0,16H96A8,8,0,0,1,88,112Zm8,40h80a8,8,0,0,0,0-16H96a8,8,0,0,0,0,16ZM232,64V184a24,24,0,0,1-24,24H32A24,24,0,0,1,8,184.11V88a8,8,0,0,1,16,0v96a8,8,0,0,0,16,0V64A16,16,0,0,1,56,48H216A16,16,0,0,1,232,64Zm-16,0H56V184a23.84,23.84,0,0,1-1.37,8H208a8,8,0,0,0,8-8Z"></path>
+                    </svg>
+                  </div>
+                  <p>UI/Display Preferences</p>
+                </a>
+                <a class="sidebar-link" data-section="data">
+                  <div data-icon="PresentationChart" data-size="24px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M216,40H136V24a8,8,0,0,0-16,0V40H40A16,16,0,0,0,24,56V176a16,16,0,0,0,16,16H79.36L57.75,219a8,8,0,0,0,12.5,10l29.59-37h56.32l29.59,37a8,8,0,1,0,12.5-10l-21.61-27H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,136H40V56H216V176ZM104,120v24a8,8,0,0,1-16,0V120a8,8,0,0,1,16,0Zm32-16v40a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm32-16v56a8,8,0,0,1-16,0V88a8,8,0,0,1,16,0Z"></path>
+                    </svg>
+                  </div>
+                  <p>Data Export/Import</p>
+                </a>
+                <a class="sidebar-link" data-section="profile">
+                  <div data-icon="Gear" data-size="24px" data-weight="fill">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M216,130.16q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.6,107.6,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.29,107.29,0,0,0-26.25-10.86,8,8,0,0,0-7.06,1.48L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.6,107.6,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06ZM128,168a40,40,0,1,1,40-40A40,40,0,0,1,128,168Z"></path>
+                    </svg>
+                  </div>
+                  <p>Profile Management</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="layout-content-container content-main">
+            <!-- Interests Configuration Section -->
+            <div id="section-interests">
+              <div class="section-header-row">
+                <p class="section-title">Interests Configuration</p>
+              </div>
+              <h2 class="section-h2">Add your interest keywords</h2>
+              <div class="form-row">
+                <label class="form-label">
+                  <p>Keywords (comma or Enter to add)</p>
+                  <div id="keywords-container" class="flex flex-wrap gap-2 mb-2"></div>
+                  <input
+                    id="keyword-input"
+                    type="text"
+                    class="form-input"
+                    placeholder="Type and press Enter or comma"
+                    autocomplete="off"
+                  >
+                </label>
+                <p class="text-xs text-gray pt-1">e.g. Microsoft, RCE, Linux, CVE-2024, XSS, etc.</p>
+              </div>
+              <div class="form-row" style="flex-wrap: wrap; align-items: flex-end;">
+                <label class="form-label">
+                  <p>Notification Language</p>
+                  <select class="form-select bg-select">
+                    <option value="en">English</option>
+                    <option value="ko">Korean</option>
+                    <option value="jp">Japanese</option>
+                  </select>
+                </label>
+              </div>
+              <div class="flex px-4 py-3 justify-end">
+                <button class="form-btn" style="background-color: #232529;">
+                  <span class="truncate">Save Changes</span>
+                </button>
+              </div>
+            </div>
+            <!-- Notification Settings Section -->
+            <div id="section-notifications" style="display:none">
+              <h2 class="section-h2">Notification Settings</h2>
+              <div class="form-row" style="flex-wrap: wrap; align-items: flex-end;">
+                <label class="form-label">
+                  <p>Notification Frequency</p>
+                  <select class="form-select bg-select">
+                    <option value="realtime">Real-time</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="never">Never</option>
+                  </select>
+                </label>
+              </div>
+              <div class="form-row" style="flex-wrap: wrap; align-items: flex-end;">
+                <label class="form-label">
+                  <p>Delivery Channel</p>
+                  <select class="form-select bg-select">
+                    <option value="email">Email</option>
+                    <option value="sms">SMS</option>
+                    <option value="push">App Push</option>
+                  </select>
+                </label>
+              </div>
+              <div class="form-row" style="flex-wrap: wrap; align-items: flex-end;">
+                <label class="form-label">
+                  <p>Quiet Hours</p>
+                  <select class="form-select bg-select">
+                    <option value="none">None</option>
+                    <option value="22-8">22:00~08:00</option>
+                    <option value="21-7">21:00~07:00</option>
+                  </select>
+                </label>
+              </div>
+              <div class="form-row" style="flex-wrap: wrap; align-items: flex-end;">
+                <label class="form-label">
+                  <p>Notification Types</p>
+                  <select class="form-select bg-select">
+                    <option value="all">All</option>
+                    <option value="important">Important Only</option>
+                    <option value="custom">Custom</option>
+                  </select>
+                </label>
+              </div>
+              <div class="form-row" style="flex-wrap: wrap; align-items: flex-end;">
+                <label class="form-label-row">
+                  <input type="checkbox" class="form-checkbox" checked>
+                  <span class="text-base font-medium leading-normal">Enable Email Notifications</span>
+                </label>
+                <label class="form-label-row">
+                  <input type="checkbox" class="form-checkbox">
+                  <span class="text-base font-medium leading-normal">Enable SMS Notifications</span>
+                </label>
+                <label class="form-label-row">
+                  <input type="checkbox" class="form-checkbox">
+                  <span class="text-base font-medium leading-normal">Enable Push Notifications</span>
+                </label>
+                <label class="form-label-row">
+                  <input type="checkbox" class="form-checkbox">
+                  <span class="text-base font-medium leading-normal">Urgent Alerts Only</span>
+                </label>
+              </div>
+              <div class="flex px-4 py-3 justify-end">
+                <button class="form-btn" style="background-color: #232529;">
+                  <span class="truncate">Save Changes</span>
+                </button>
+              </div>
+            </div>
+            <!-- UI/Display Preferences Section -->
+            <div id="section-ui" style="display:none">
+              <h2 class="section-h2">UI/Display Preferences</h2>
+              <div class="form-row" style="flex-wrap: wrap; align-items: flex-end;">
+                <label class="form-label">
+                  <p>Theme</p>
+                  <select class="form-select bg-select">
+                    <option value="auto">Auto</option>
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                  </select>
+                </label>
+                <label class="form-label">
+                  <p>Font Size</p>
+                  <select class="form-select bg-select">
+                    <option value="small">Small</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="large">Large</option>
+                  </select>
+                </label>
+                <label class="form-label">
+                  <p>Language</p>
+                  <select class="form-select bg-select">
+                    <option value="en">English</option>
+                    <option value="ko">Korean</option>
+                    <option value="jp">Japanese</option>
+                  </select>
+                </label>
+                <label class="form-label">
+                  <p>Accessibility (High Contrast)</p>
+                  <select class="form-select bg-select">
+                    <option value="off">Off</option>
+                    <option value="on">On</option>
+                  </select>
+                </label>
+              </div>
+              <div class="flex px-4 py-3 justify-end">
+                <button class="form-btn-dark">
+                  <span class="truncate">Save Changes</span>
+                </button>
+              </div>
+            </div>
+            <!-- Data Export/Import Section -->
+            <div id="section-data" style="display:none">
+              <h2 class="section-h2">Data Export/Import</h2>
+              <div class="form-row" style="flex-wrap: wrap; align-items: flex-end;">
+                <label class="form-label">
+                  <p>Export Format</p>
+                  <select class="form-select bg-select">
+                    <option value="json">JSON</option>
+                    <option value="csv">CSV</option>
+                    <option value="xml">XML</option>
+                  </select>
+                </label>
+                <label class="form-label">
+                  <p>Import Format</p>
+                  <select class="form-select bg-select">
+                    <option value="json">JSON</option>
+                    <option value="csv">CSV</option>
+                    <option value="xml">XML</option>
+                  </select>
+                </label>
+              </div>
+              <div class="flex px-4 py-3 justify-end">
+                <button class="form-btn-gray">
+                  <span class="truncate">Export Data</span>
+                </button>
+                <span style="display:inline-block; width: 16px;"></span>
+                <button class="form-btn-gray">
+                  <span class="truncate">Import Data</span>
+                </button>
+              </div>
+            </div>
+            <!-- Profile Management Section -->
+            <div id="section-profile" style="display:none">
+              <h2 class="section-h2">Profile Management</h2>
+              <div class="form-row" style="flex-wrap: wrap; align-items: flex-end;">
+                <label class="form-label">
+                  <p>Nickname</p>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <input type="text" id="nickname-input" class="form-input" placeholder="Enter your nickname">
+                    <button type="button" id="nickname-check-btn" class="form-btn-gray" style="height:3rem; border-radius:0.75rem; padding:0 1rem;">Check</button>
+                  </div>
+                  <div>
+                    <span id="nickname-check-msg" style="display:block; min-height:20px; font-size:0.75rem; padding-top:4px;"></span>
+                  </div>
+                </label>
+                <label class="form-label">
+                  <p>Email</p>
+                  <div style="display: flex; gap: 0.5rem;">
+                    <input type="email" id="email-input" class="form-input" placeholder="Enter your email">
+                    <button type="button" id="email-check-btn" class="form-btn-gray" style="height:3rem; border-radius:0.75rem; padding:0 1rem;">Check</button>
+                  </div>
+                  <div>
+                    <span id="email-check-msg" style="display:block; min-height:20px; font-size:0.75rem; padding-top:4px;"></span>
+                  </div>
+                </label>
+                <label class="form-label">
+                  <p>Current Password</p>
+                  <input type="password" id="current-password" class="form-input" placeholder="Current password">
+                  <div>
+                    <span id="current-password-msg" style="display:block; min-height:20px; font-size:0.75rem; padding-top:4px;"></span>
+                  </div>
+                </label>
+                <label class="form-label">
+                  <p>New Password</p>
+                  <input type="password" id="new-password" class="form-input" placeholder="New password">
+                  <div>
+                    <span id="new-password-msg" style="display:block; min-height:20px; font-size:0.75rem; padding-top:4px;"></span>
+                  </div>
+                </label>
+                <label class="form-label">
+                  <p>Confirm New Password</p>
+                  <input type="password" id="confirm-password" class="form-input" placeholder="Confirm new password">
+                  <div>
+                    <span id="password-match-msg" style="display:block; min-height:20px; font-size:0.75rem; padding-top:4px;"></span>
+                  </div>
+                </label>
+                <label class="form-label">
+                  <p>Profile Image</p>
+                  <div class="form-label-row">
+                    <label for="profile-image-upload" class="profile-upload-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M12 12v6m0 0l-3-3m3 3l3-3M12 6v6" />
+                      </svg>
+                      <span style="font-size: 0.95rem; color: #fff;">Choose File</span>
+                    </label>
+                    <input
+                      id="profile-image-upload"
+                      type="file"
+                      accept="image/*"
+                      class="hidden"
+                    >
+                    <span id="profile-image-filename" style="font-size:0.75rem; color:#a7abb4; display:inline-block; max-width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; vertical-align:middle;"></span>
+                  </div>
+                  <div>
+                    <span id="profile-image-msg" style="display:block; min-height:20px; font-size:0.75rem; padding-top:4px;"></span>
+                  </div>
+                </label>
+              </div>
+              <div style="display: flex; justify-content: flex-start; gap: 1rem; padding: 16px 32px 12px 32px;">
+                <button class="form-btn-dark">
+                  <span class="truncate">Save Changes</span>
+                </button>
+                <button class="form-btn-gray">
+                  <span class="truncate">Cancel</span>
+                </button>
+              </div>
+            </div>
+            <!-- Add script for tab switching -->
+            <script>
+              // filepath: /Users/mingyu/Desktop/web_project/stitch.html
+              document.querySelectorAll('.sidebar-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+                  this.classList.add('active');
+                  document.querySelectorAll('[id^="section-"]').forEach(sec => sec.style.display = 'none');
+                  const section = document.getElementById('section-' + this.dataset.section);
+                  if (section) section.style.display = '';
+                });
+              });
+            </script>
+            <script>
+              // filepath: /Users/mingyu/Desktop/web_project/stitch.html
+              // Keyword input logic
+              const input = document.getElementById('keyword-input');
+              const container = document.getElementById('keywords-container');
+              let keywords = [];
+
+              // Create and insert message area for keyword feedback
+              let keywordMsg = document.createElement('div');
+              keywordMsg.id = 'keyword-msg';
+              keywordMsg.className = 'text-xs text-gray pt-2 min-h-20';
+              input.parentNode.insertBefore(keywordMsg, input.nextSibling);
+
+              function renderKeywords() {
+                container.innerHTML = '';
+                keywords.forEach((kw, idx) => {
+                  const tag = document.createElement('span');
+                  tag.className = 'keyword-tag';
+                  tag.innerHTML = `${kw} <button type="button" data-idx="${idx}">&times;</button>`;
+                  container.appendChild(tag);
+                });
+                keywordMsg.style.marginTop = keywords.length ? '12px' : '0';
+              }
+
+              function showKeywordMsg(msg, color = '#a7abb4') {
+                keywordMsg.textContent = msg;
+                keywordMsg.style.color = color;
+              }
+
+              input.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ',') {
+                  e.preventDefault();
+                  const value = input.value.trim().replace(/,$/, '');
+                  if (!value) {
+                    showKeywordMsg('Please enter a keyword.', '#f87171');
+                    return;
+                  }
+                  if (keywords.includes(value)) {
+                    showKeywordMsg('Already added.', '#f87171');
+                    input.value = '';
+                    return;
+                  }
+                  keywords.push(value);
+                  renderKeywords();
+                  showKeywordMsg('Keyword added.', '#4ade80');
+                  input.value = '';
+                } else {
+                  showKeywordMsg('');
+                }
+              });
+
+              input.addEventListener('blur', function() {
+                const value = input.value.trim().replace(/,$/, '');
+                if (value && !keywords.includes(value)) {
+                  keywords.push(value);
+                  renderKeywords();
+                  showKeywordMsg('Keyword added.', '#4ade80');
+                } else if (value && keywords.includes(value)) {
+                  showKeywordMsg('Already added.', '#f87171');
+                }
+                input.value = '';
+              });
+
+              container.addEventListener('click', function(e) {
+                if (e.target.tagName === 'BUTTON') {
+                  const idx = parseInt(e.target.getAttribute('data-idx'));
+                  keywords.splice(idx, 1);
+                  renderKeywords();
+                  showKeywordMsg('Keyword removed.', '#fbbf24');
+                }
+              });
+            </script>
+            <script>
+              // filepath: /Users/mingyu/Desktop/web_project/stitch.html
+              // Profile image filename display
+              const fileInput = document.getElementById('profile-image-upload');
+              const fileNameSpan = document.getElementById('profile-image-filename');
+              if (fileInput && fileNameSpan) {
+                fileInput.addEventListener('change', function() {
+                  fileNameSpan.textContent = fileInput.files.length ? fileInput.files[0].name : '';
+                });
+              }
+            </script>
+            <script>
+              // filepath: /Users/mingyu/Desktop/web_project/stitch.html
+              // Nickname duplication check (dummy logic)
+              document.getElementById('nickname-check-btn').onclick = function() {
+                const val = document.getElementById('nickname-input').value.trim();
+                const msg = document.getElementById('nickname-check-msg');
+                if (!val) {
+                  msg.textContent = "Please enter a nickname.";
+                  msg.className = "text-xs pt-1 text-red";
+                } else if (val.toLowerCase() === "admin") {
+                  msg.textContent = "This nickname is already taken.";
+                  msg.className = "text-xs pt-1 text-red";
+                } else {
+                  msg.textContent = "This nickname is available.";
+                  msg.className = "text-xs pt-1 text-green";
+                }
+              };
+
+              // Email duplication check (dummy logic)
+              document.getElementById('email-check-btn').onclick = function() {
+                const val = document.getElementById('email-input').value.trim();
+                const msg = document.getElementById('email-check-msg');
+                if (!val) {
+                  msg.textContent = "Please enter an email.";
+                  msg.className = "text-xs pt-1 text-red";
+                } else if (val.toLowerCase() === "admin@example.com") {
+                  msg.textContent = "This email is already registered.";
+                  msg.className = "text-xs pt-1 text-red";
+                } else {
+                  msg.textContent = "This email is available.";
+                  msg.className = "text-xs pt-1 text-green";
+                }
+              };
+
+              // Password match check
+              document.getElementById('new-password').addEventListener('input', checkPasswordMatch);
+              document.getElementById('confirm-password').addEventListener('input', checkPasswordMatch);
+
+              function checkPasswordMatch() {
+                const pw1 = document.getElementById('new-password').value;
+                const pw2 = document.getElementById('confirm-password').value;
+                const msg = document.getElementById('password-match-msg');
+                if (!pw1 && !pw2) {
+                  msg.textContent = "";
+                } else if (pw1 !== pw2) {
+                  msg.textContent = "Passwords do not match.";
+                  msg.className = "text-xs pt-1 text-red";
+                } else {
+                  msg.textContent = "Passwords match.";
+                  msg.className = "text-xs pt-1 text-green";
+                }
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
