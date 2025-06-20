@@ -84,7 +84,6 @@ button, select {
 }
 
 button, [type='button'], [type='reset'], [type='submit'] {
-  -webkit-appearance: button;
   background-color: transparent;
   background-image: none;
 }
@@ -107,17 +106,7 @@ progress {
 }
 
 [type='search'] {
-  -webkit-appearance: textfield;
   outline-offset: -2px;
-}
-
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
 }
 
 summary {
@@ -145,7 +134,6 @@ ol, ul, menu {
 
 img, svg, video, canvas, audio, iframe, embed, object {
   display: block;
-  vertical-align: middle;
 }
 
 img, video {

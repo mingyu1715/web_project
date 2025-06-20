@@ -196,7 +196,7 @@
           <a href="../index.html">Dashboard</a>
           <a href="../cves.html">CVEs</a>
           <a href="../news.html">News</a>
-          <a href="#">Alerts</a>
+          <a href="../alerts.html">Alerts</a>
         </nav>
       </div>
       <div class="right-section">
@@ -221,7 +221,7 @@
         <div id="settings-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); z-index:2000; align-items:center; justify-content:center;">
           <div style="background:none; border-radius:16px; width:90vw; height:90vh; max-width:1200px; max-height:900px; padding:0; position:relative; display:flex; flex-direction:column; align-items:center;">
             <button id="close-settings-modal" style="position:absolute; top:24px; right:32px; background:none; border:none; font-size:40px; color:#fff; cursor:pointer; z-index:10;">&times;</button>
-            <iframe src="../setting.html" style="width:100%;height:100%;min-height:500px;border:none;flex:1 1 auto; background:transparent;"></iframe>
+            <iframe src="setting.html" style="width:100%;height:100%;min-height:500px;border:none;flex:1 1 auto; background:transparent;"></iframe>
           </div>
         </div>
       </div>
@@ -233,7 +233,7 @@
         <button id="mark-read">Mark all as read</button>
       </div>
       <div class="notification-list">
-        <div class="notification-item">New CVE updates available.</diㅊv>
+        <div class="notification-item">New CVE updates available.</div>
         <div class="notification-item">Security advisory from TechCorp.</div>
         <div class="notification-item">New exploit detected for CVE-2023-4567.</div>
       </div>
@@ -247,28 +247,28 @@
             <div class="cve-breadcrumb">
               <a href="#">CVEs</a>
               <span>/</span>
-              <span class="current">CVE-2023-7891</span>
+              <span class="current">CVE-2023-4567</span>
             </div>
             <h2 class="cve-title">
-              CVE-2023-7891: Privilege Escalation in Database Management Tool
+              CVE-2023-4567: Remote Code Execution in Network Management System
             </h2>
             <p class="cve-desc">
-              A privilege escalation vulnerability exists in the Database Management Tool, allowing local users to gain administrative rights by exploiting improper permission checks. Attackers can leverage this flaw to modify database configurations or access sensitive information.
+              A severe vulnerability has been discovered in the Network Management System (NMS), which could allow unauthenticated remote attackers to execute arbitrary code on affected servers. The issue is caused by insufficient validation of network packet data, resulting in a buffer overflow condition. Exploitation may lead to full system compromise, unauthorized access, or service disruption.
             </p>
             <h3 class="cve-section-title">CVSS Score</h3>
             <div class="cve-score-row">
               <div class="cve-score-box">
                 <p class="cve-score-label">CVSS v3.1</p>
-                <p class="cve-score-value">7.4</p>
+                <p class="cve-score-value">9.8</p>
               </div>
             </div>
             <h3 class="cve-section-title">Affected Systems</h3>
             <p class="cve-desc">
-              All versions of DBTool prior to 3.2.0 are affected. The issue impacts both Windows and Linux installations.
+              All releases of NMS prior to version 2.5.3 are vulnerable. The flaw impacts deployments on Windows, Linux, and macOS platforms.
             </p>
             <h3 class="cve-section-title">Related Links</h3>
             <div class="cve-link-row">
-              <a class="cve-link-label no-link-style" href="#" target="_blank" rel="noopener">Security Bulletin</a>
+              <a class="cve-link-label no-link-style" href="http://cwe.mitre.org/data/definitions/502.html" target="_blank" rel="noopener">CWE</a>
               <span class="cve-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
@@ -276,7 +276,7 @@
               </span>
             </div>
             <div class="cve-link-row">
-              <a class="cve-link-label no-link-style" href="#" target="_blank" rel="noopener">Mitigation Guide</a>
+              <a class="cve-link-label no-link-style" href="https://www.exploit-db.com/exploits/52324" target="_blank" rel="noopener">Exploit DB Entry</a>
               <span class="cve-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
@@ -284,7 +284,7 @@
               </span>
             </div>
             <div class="cve-link-row">
-              <a class="cve-link-label no-link-style" href="#" target="_blank" rel="noopener">Vendor Advisory</a>
+              <a class="cve-link-label no-link-style" href="http://www.openwall.com/lists/oss-security/2025/06/02/3" target="_blank" rel="noopener">Official Advisory</a>
               <span class="cve-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
@@ -295,7 +295,7 @@
           <div class="cve-side-panel">
             <h3 class="cve-side-section-title">Similar CVEs</h3>
             <div class="cve-link-row">
-              <a class="cve-link-label no-link-style" href="cve_1.html" target="_blank" rel="noopener">CVE-2023-7890</a>
+              <a class="cve-link-label no-link-style" href="cve_1.html" target="_blank" rel="noopener">CVE-2023-4568</a>
               <span class="cve-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
@@ -303,7 +303,7 @@
               </span>
             </div>
             <div class="cve-link-row">
-              <a class="cve-link-label no-link-style" href="cve_3.html" target="_blank" rel="noopener">CVE-2023-7892</a>
+              <a class="cve-link-label no-link-style" href="cve_3.html" target="_blank" rel="noopener">CVE-2023-4569</a>
               <span class="cve-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
@@ -311,7 +311,7 @@
               </span>
             </div>
             <div class="cve-link-row">
-              <a class="cve-link-label no-link-style" href="cve_4.html" target="_blank" rel="noopener">CVE-2023-7893</a>
+              <a class="cve-link-label no-link-style" href="cve_4.html" target="_blank" rel="noopener">CVE-2023-4570</a>
               <span class="cve-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                   <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
@@ -320,9 +320,9 @@
             </div>
             <h3 class="cve-side-section-title">Tags</h3>
             <div class="cve-tag-list">
-              <span class="cve-tag">High</span>
-              <span class="cve-tag">Privilege Escalation</span>
-              <span class="cve-tag">Database</span>
+              <span class="cve-tag">Critical</span>
+              <span class="cve-tag">Remote Code Execution</span>
+              <span class="cve-tag">Buffer Overflow</span>
             </div>
           </div>
         </div>
@@ -333,18 +333,22 @@
 
   <script src="../script.js"></script>
   <script>
-    // 아바타 클릭 시 오버레이로 설정 모달 표시
     const avatarBtn = document.getElementById('avatar-btn');
     const settingsModal = document.getElementById('settings-modal');
     const closeSettingsModal = document.getElementById('close-settings-modal');
+
+    // 아바타 클릭 시 설정 모달 표시
     avatarBtn.addEventListener('click', function(e) {
       e.stopPropagation();
       settingsModal.style.display = 'flex';
     });
+
+    // 닫기 버튼 클릭 시 모달 닫기
     closeSettingsModal.addEventListener('click', function() {
       settingsModal.style.display = 'none';
     });
-    // 오버레이 바깥 클릭 시 닫기
+
+    // 모달 바깥 영역 클릭 시 모달 닫기
     settingsModal.addEventListener('click', function(e) {
       if (e.target === settingsModal) {
         settingsModal.style.display = 'none';
